@@ -56,7 +56,8 @@ ${c.description}
   }
 
   /**
-   * @internal An asynchronous wrapper over fs.writeFile.
+   * @internal
+   * An asynchronous wrapper over fs.writeFile.
    * @param path  The path of the file to write to.
    * @param data  The content to write to the file.
    * @param options  The optional mode and flags to use when writing the file.
@@ -75,7 +76,8 @@ ${c.description}
   }
 
   /**
-   * @internal An asynchronous wrapper over fs.exists.
+   * @internal
+   * An asynchronous wrapper over fs.exists.
    * @param path  The path of the file/dir to check exists.
    */
   private static async existsAsync(path: PathLike) {
@@ -85,7 +87,8 @@ ${c.description}
   }
 
   /**
-   * @internal An asynchronous wrapper over fs.mkdir.
+   * @internal
+   * An asynchronous wrapper over fs.mkdir.
    * @param path  The path of the dir to create.
    */
   private static async mkdirAsync(path: PathLike) {
