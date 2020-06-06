@@ -56,8 +56,7 @@ ${c.description}
   }
 
   /**
-   * @internal
-   * An asynchronous wrapper over fs.writeFile.
+   * @internal An asynchronous wrapper over fs.writeFile.
    * @param path  The path of the file to write to.
    * @param data  The content to write to the file.
    * @param options  The optional mode and flags to use when writing the file.
@@ -66,7 +65,7 @@ ${c.description}
     path: PathLike,
     data: NodeJS.ArrayBufferView | string,
     options?: WriteFileOptions
-  ) {
+  ): Promise<PathLike> {
     return new Promise((resolve, reject) => {
       writeFile(path, data, options, (err) => {
         if (err) return reject(err);
@@ -76,22 +75,20 @@ ${c.description}
   }
 
   /**
-   * @internal
-   * An asynchronous wrapper over fs.exists.
+   * @internal An asynchronous wrapper over fs.exists.
    * @param path  The path of the file/dir to check exists.
    */
-  private static async existsAsync(path: PathLike) {
+  private static async existsAsync(path: PathLike): Promise<boolean> {
     return new Promise((resolve) => {
       exists(path, resolve);
     });
   }
 
   /**
-   * @internal
-   * An asynchronous wrapper over fs.mkdir.
+   * @internal An asynchronous wrapper over fs.mkdir.
    * @param path  The path of the dir to create.
    */
-  private static async mkdirAsync(path: PathLike) {
+  private static async mkdirAsync(path: PathLike): Promise<PathLike> {
     return new Promise((resolve, reject) => {
       mkdir(path, (err) => {
         if (err) return reject(err);
