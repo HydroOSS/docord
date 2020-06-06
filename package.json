@@ -1,6 +1,6 @@
 {
   "name": "docord",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Discord bot toolkit for generating command documentation.",
   "main": "dist/index.js",
   "repository": "https://github.com/HydroOSS/docord",
